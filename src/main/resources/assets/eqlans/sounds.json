@@ -1,0 +1,44 @@
+{
+  "om_nom_used": {
+    "subtitles": "sounds.eqlans.om_nom_used",
+    "sounds": [
+      "eqlans:om_nom_used"
+    ]
+  },
+  "om_nom_exploded": {
+    "subtitles": "sounds.eqlans.om_nom_exploded",
+    "sounds": [
+      "eqlans:om_nom_exploded"
+    ]
+  },
+  "holy_mantle_used": {
+    "subtitles": "sounds.eqlans.holy_mantle_used",
+    "sounds": [
+      "eqlans:holy_mantle_used"
+    ]
+  },
+  "noga": {
+    "subtitles": "sounds.eqlans.noga",
+    "sounds": [
+      "eqlans:noga"
+    ]
+  },
+  "bird": {
+    "subtitles": "sounds.eqlans.bird",
+    "sounds": [
+      "eqlans:bird"
+    ]
+  },
+  "invalid": {
+    "subtitles": "sounds.eqlans.invalid",
+    "sounds": [
+      "eqlans:invalid"
+    ]
+  },
+  "okrohka": {
+    "subtitles": "sounds.eqlans.okrohka",
+    "sounds": [
+      "eqlans:okrohka"
+    ]
+  }
+}

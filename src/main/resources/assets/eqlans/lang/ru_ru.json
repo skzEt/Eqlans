@@ -1,0 +1,82 @@
+{
+  "item.eqlans.dumpling": "Пельмень",
+  "item.eqlans.dumpling_sun": "Антонио-пельменито",
+  "item.eqlans.ball_of_drake": "Шароподобный Дрейк",
+  "item.eqlans.stintocoin": "Стинта Коин",
+  "item.eqlans.mazellovvv_microphone": "Микрофон Мазелова",
+
+  "item.eqlans.glasses": "Крутые очки",
+  "item.eqlans.stint_helmet": "Позолоченный монетами шлем",
+  "item.eqlans.boxers": "Боксеры",
+  "item.eqlans.dnd_chestplate": "ДНД Нагрудник",
+  "item.eqlans.dnd_book": "ДНД книга",
+  "item.eqlans.closed_dnd_book": "Пустая ДНД книга",
+  "item.eqlans.drake_pendant": "Подвеска Дрейка",
+
+  "item.eqlans.overcooked_dumpling": "Сгоревший Пельми",
+  "item.eqlans.mazellovvv_cookie": "Мазеловная печенька",
+
+  "block.eqlans.ginger_door": "Имбирная пряниковая дверь",
+  "block.eqlans.ginger_block": "Имбирный пряниковый блок",
+  "block.eqlans.ginger_stairs": "Имбирный приняковый блок лестницы",
+  "block.eqlans.ginger_slab": "Имбирная приняковая плита",
+  "block.eqlans.ginger_fence": "Имбирный пряниковый забор",
+  "block.eqlans.ginger_fence_gate": "Имбирная приняковая калитка",
+
+  "block.eqlans.sugar_block": "Сахарный блок",
+  "block.eqlans.sugar_stairs": "Сахарный блок лестницы",
+  "block.eqlans.sugar_slab": "Сахарная плита",
+  "block.eqlans.sugar_fence": "Сахарный забор",
+  "block.eqlans.sugar_fence_gate": "Сахарная калитка",
+
+  "block.eqlans.smile_log": "Улыбчивое бревно",
+  "block.eqlans.smile_wood": "Улыбчивое дерево",
+  "block.eqlans.stripped_smile_log": "Обтессаное улыбчивое бревно",
+  "block.eqlans.stripped_smile_wood": "Обтессаное улыбчивое дерево",
+  "block.eqlans.smile_planks": "Улыбчивые доски",
+  "block.eqlans.smile_leaves": "Улыбчивые листья",
+  "block.eqlans.smile_sapling": "Улыбчивый сажанец",
+
+  "item.eqlans.school_boot": "Бархатные тяги",
+  "item.eqlans.twitch_diamond": "Твичовский алмаз",
+  "item.eqlans.coin_alloy": "Сплав монет",
+  "item.eqlans.om_nom": "Ам Ням",
+  "item.eqlans.super_om_nom": "Супер Ам Ням",
+  "item.eqlans.eqlan_alloy": "Сплав Еблан сквада",
+  "item.eqlans.holy_mantle": "Святая мантия",
+  "item.eqlans.transmitter": "Рация",
+
+  "block.eqlans.twitch_ore": "Твичовская руда",
+  "block.eqlans.deepslate_twitch_ore": "Глубокая сланцевая твичовская руда",
+  "block.eqlans.twitch_block": "Твичовский блок",
+  "item.eqlans.twitch_axe": "Твичовский топор",
+  "item.eqlans.twitch_sword": "Твичовский меч",
+  "item.eqlans.twitch_pickaxe": "Твичовская кирка",
+  "item.eqlans.twitch_shovel": "Твичовская лопата",
+  "item.eqlans.twitch_hoe": "Твичовская мотыга",
+
+  "item.eqlans.dice": "Кубик",
+
+  "creativetab.streamer_tab": "Eqlans!",
+  "button.eqlans.attack_1": "Взрыв",
+  "screen.eqlans.smile": "Улыбающийся",
+  "eqlans.message.tnt": "Бомбящих птичек осталось: %s",
+  "eqlans.message.tnt1": "Птички прелетят через: %s",
+  "eqlans.message.invalid": "13 стих - Инвалид",
+  "eqlans.message.okroshka": "70 стих - Окрошка",
+
+  "eqlans.message.ability_1": "Взрывной луч - D6",
+  "eqlans.message.ability_2": "Телепорт - D10",
+  "eqlans.message.ability_3": "Левитация - D4",
+  "eqlans.message.ability_4": "Луч смерти - D10",
+
+  "eqlans.message.failed_cube": "Критическая неудача",
+  "eqlans.message.cube": "На кубике выпало число: %s",
+  "eqlans.message.max_cube": "Максимальное число!",
+  "eqlans.message.inCreative": "Неудалось выдать эффект, так как включен креатив.",
+
+  "eqlans.description.transmitter": "ВЗРЫВООПАСНО! ИСПОЛЬЗУЙ С УМОМ",
+  "eqlans.description.om_nom": "Не использовать на бедрок и обсидиан",
+  "eqlans.description.holy_mantle": "Священный предмет созданный высшими",
+  "eqlans.description.dnd_book": "Старая книга, но она не простая"
+}

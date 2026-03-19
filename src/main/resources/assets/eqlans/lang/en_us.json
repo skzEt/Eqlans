@@ -1,0 +1,84 @@
+{
+  "item.eqlans.dumpling": "Dumpling",
+  "item.eqlans.dumpling_sun": "Antonio-pelmenito",
+  "item.eqlans.stintocoin": "Stint coin",
+  "item.eqlans.ball_of_drake": "Ball of Drake",
+  "item.eqlans.mazellovvv_microphone": "Mazellovvv microphone",
+
+  "item.eqlans.glasses": "Cool glasses",
+  "item.eqlans.stint_helmet": "A coin-gilded helmet",
+  "item.eqlans.boxers": "Boxers",
+  "item.eqlans.dnd_chestplate": "DND Chestplate",
+  "item.eqlans.dnd_book": "DND book",
+  "item.eqlans.closed_dnd_book": "Empty DND book",
+  "item.eqlans.drake_pendant": "Drake's pendant",
+
+  "item.eqlans.overcooked_dumpling": "Burnt pelmi",
+  "item.eqlans.mazellovvv_cookie": "Mazellovvv Cookie",
+
+  "block.eqlans.ginger_block": "Gingerbread block",
+  "block.eqlans.ginger_stairs": "Gingerbread stair",
+  "block.eqlans.ginger_slab": "Gingerbread slab",
+  "block.eqlans.ginger_fence": "Gingerbread fence",
+  "block.eqlans.ginger_fence_gate": "Gingerbread fence gate",
+  "block.eqlans.ginger_door": "Gingerbread Door",
+
+  "block.eqlans.sugar_block": "Sugar block",
+  "block.eqlans.sugar_stairs": "Sugar stair",
+  "block.eqlans.sugar_slab": "Sugar slab",
+  "block.eqlans.sugar_fence": "Sugar fence",
+  "block.eqlans.sugar_fence_gate": "Sugar fence gate",
+
+  "block.eqlans.smile_log": "Smile log",
+  "block.eqlans.smile_wood": "Smile wood",
+  "block.eqlans.stripped_smile_log": "Stripped smile log",
+  "block.eqlans.stripped_smile_wood": "Stripped smile wood",
+  "block.eqlans.smile_planks": "Smile planks",
+  "block.eqlans.smile_leaves": "Smile leaves",
+  "block.eqlans.smile_sapling": "Smile sapling",
+
+  "item.eqlans.school_boot": "Velvet traction",
+  "item.eqlans.twitch_diamond": "Twitch Diamond",
+  "item.eqlans.coin_alloy": "Coin Alloy",
+  "item.eqlans.om_nom": "Om Nom",
+  "item.eqlans.super_om_nom": "Super Om Nom",
+  "item.eqlans.eqlan_alloy": "Eblan Squada rafting",
+  "item.eqlans.holy_mantle": "Holy Mantle",
+  "item.eqlans.transmitter": "Transmitter",
+
+  "block.eqlans.twitch_ore": "Twitch ore",
+  "block.eqlans.deepslate_twitch_ore": "Deepslate twitch ore",
+  "block.eqlans.twitch_block": "Twitch block",
+  "item.eqlans.twitch_axe": "Twitch axe",
+  "item.eqlans.twitch_sword": "Twitch sword",
+  "item.eqlans.twitch_pickaxe": "Twitch pickaxe",
+  "item.eqlans.twitch_shovel": "Twitch shovel",
+  "item.eqlans.twitch_hoe": "Twitch hoe",
+
+  "item.eqlans.dice": "Dice",
+
+  "creativetab.streamer_tab": "Eqlans!",
+  "button.eqlans.attack_1": "Explosion",
+  "screen.eqlans.smile": "Smiler",
+  "eqlans.message.tnt": "There are %s TNT left",
+  "eqlans.message.tnt1": "TNT Flying for %s",
+  "eqlans.message.invalid": "13 poem - Disabled",
+  "eqlans.message.okroshka": "70 poem - Okroshka",
+
+  "eqlans.message.ability_1": "Explosive Beam - D6",
+  "eqlans.message.ability_2": "Teleport - D10",
+  "eqlans.message.ability_3": "Levitation - D4",
+  "eqlans.message.ability_4": "The ray of death - D10",
+
+  "eqlans.message.failed_cube": "Critical unluck",
+  "eqlans.message.cube": "A number appeared on the dice: %s",
+  "eqlans.message.max_cube": "Max number!",
+  "eqlans.message.inCreative": "Failed to produce an effect because the creative is enabled.",
+
+  "eqlans.message.death": "MAX NUMBER!",
+
+  "eqlans.description.transmitter": "EXPLOSIVE! USE IT WISELY",
+  "eqlans.description.om_nom": "Do not use on bedrock and obsidian",
+  "eqlans.description.holy_mantle": "A sacred object created by the higher ones",
+  "eqlans.description.dnd_book": "It's an old book, but it's not simple"
+}

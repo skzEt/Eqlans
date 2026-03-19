@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "neoforge:separate_transforms",
+	"base": {
+		"parent": "eqlans:item/dnd_book_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "eqlans:item/dnd_book_3d"
+		},
+		"ground": {
+			"parent": "eqlans:item/dnd_book_3d"
+		},
+		"fixed": {
+			"parent": "eqlans:item/dnd_book_3d"
+		}
+	}
+}

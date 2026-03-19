@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "neoforge:separate_transforms",
+	"base": {
+		"parent": "eqlans:item/super_om_nom_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "eqlans:item/super_om_nom_3d"
+		},
+		"ground": {
+			"parent": "eqlans:item/super_om_nom_3d"
+		},
+		"fixed": {
+			"parent": "eqlans:item/super_om_nom_3d"
+		}
+	}
+}

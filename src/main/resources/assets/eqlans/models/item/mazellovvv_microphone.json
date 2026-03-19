@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "neoforge:separate_transforms",
+	"base": {
+		"parent": "eqlans:item/mazellovvv_microphone_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "eqlans:item/mazellovvv_microphone_3d"
+		},
+		"ground": {
+			"parent": "eqlans:item/mazellovvv_microphone_3d"
+		},
+		"fixed": {
+			"parent": "eqlans:item/mazellovvv_microphone_3d"
+		}
+	}
+}
