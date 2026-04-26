@@ -20,6 +20,12 @@ public class ModSounds {
     public static final Supplier<SoundEvent> INVALID = registerSoundEvent("invalid");
     public static final Supplier<SoundEvent> OKROHKA = registerSoundEvent("okrohka");
 
+    public static final Supplier<SoundEvent> JOPA_0 = registerSoundEvent("jopa_0");
+    public static final Supplier<SoundEvent> JOPA_1 = registerSoundEvent("jopa_1");
+    public static final Supplier<SoundEvent> JOPA_2 = registerSoundEvent("jopa_2");
+    public static final Supplier<SoundEvent> JOPA_3 = registerSoundEvent("jopa_3");
+    public static final Supplier<SoundEvent> JOPA_4 = registerSoundEvent("jopa_4");
+
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         Identifier id = Identifier.fromNamespaceAndPath(Streamer.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));

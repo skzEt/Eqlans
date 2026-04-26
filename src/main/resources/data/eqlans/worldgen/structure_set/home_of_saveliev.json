@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "eqlans:home_of_saveliev",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 41840891,
+    "spacing": 32,
+    "separation": 16
+  }
+}

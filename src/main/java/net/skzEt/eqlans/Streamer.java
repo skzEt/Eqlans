@@ -1,5 +1,7 @@
 package net.skzEt.eqlans;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -9,13 +11,13 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.skzEt.eqlans.registries.*;
 import net.skzEt.eqlans.loot.ModLootModifiers;
 import net.skzEt.eqlans.particle.HolyMantleParticles;
 import net.skzEt.eqlans.sound.ModSounds;
+import net.skzEt.eqlans.worldgen.ModStructurePlacement;
 
 @Mod(Streamer.MOD_ID)
 public class Streamer
@@ -27,15 +29,17 @@ public class Streamer
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
-        ModCreativeModTabs.CREATIVE_MODE_TABS.register(modEventBus);
-
-        ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
-        ModBlockEntity.BLOCK_ENITY.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
 
         ModLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
+        ModStructures.STRUCTURES.register(modEventBus);
+        ModStructurePlacement.STRUCTURE_PLACEMENT_TYPE.register(modEventBus);
+
         ModParticles.PARTICLE_TYPE.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+
+        ModCreativeModTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
     }
@@ -53,6 +57,11 @@ public class Streamer
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(ModParticles.HOLY_MANTLE_PARTICLE.get(), HolyMantleParticles.Provider::new);
+        }
+
+        @SubscribeEvent
+        public static void onClientSetup(FMLCommonSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GINGER_DOOR.get(), ChunkSectionLayer.CUTOUT);
         }
     }
 }

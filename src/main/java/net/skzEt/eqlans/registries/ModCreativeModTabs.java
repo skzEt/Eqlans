@@ -42,8 +42,7 @@ public class ModCreativeModTabs {
                         // Armor
                         output.accept(ModItems.GLASSES.get());
                         output.accept(ModItems.STINTIK_HELMET.get());
-                        output.accept(ModItems.BOXERS.get());
-                        output.accept(ModItems.DND.get());
+                        output.accept(ModItems.DND_CHESTPLATE.get());
                         output.accept(ModItems.DRAKE_PENDANT.get());
                         // Weapons
                         output.accept(ModItems.TWITCH_SWORD.get());

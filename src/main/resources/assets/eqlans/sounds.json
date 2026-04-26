@@ -40,5 +40,35 @@
     "sounds": [
       "eqlans:okrohka"
     ]
+  },
+  "jopa_0": {
+    "subtitles": "sounds.eqlans.jopa_0",
+    "sounds": [
+      "eqlans:jopa_0"
+    ]
+  },
+  "jopa_1": {
+    "subtitles": "sounds.eqlans.jopa_1",
+    "sounds": [
+      "eqlans:jopa_1"
+    ]
+  },
+  "jopa_2": {
+    "subtitles": "sounds.eqlans.jopa_2",
+    "sounds": [
+      "eqlans:jopa_2"
+    ]
+  },
+  "jopa_3": {
+    "subtitles": "sounds.eqlans.jopa_3",
+    "sounds": [
+      "eqlans:jopa_3"
+    ]
+  },
+  "jopa_4": {
+    "subtitles": "sounds.eqlans.jopa_4",
+    "sounds": [
+      "eqlans:jopa_4"
+    ]
   }
 }

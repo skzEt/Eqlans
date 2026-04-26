@@ -22,6 +22,10 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> SCHOOL_REPAIRABLE = createTag("school_repairable");
+        public static final TagKey<Item> STEAMER_REPAIRABLE = createTag("streamer_repairable");
+        public static final TagKey<Item> DND_REPAIRABLE = createTag("dnd_repairable");
+
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(Identifier.fromNamespaceAndPath(Streamer.MOD_ID, name));
         }

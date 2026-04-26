@@ -3,11 +3,10 @@ package net.skzEt.eqlans.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.skzEt.eqlans.Streamer;
 import net.skzEt.eqlans.registries.ModItems;
-import org.jetbrains.annotations.Nullable;
+import net.skzEt.eqlans.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,7 +22,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.GLASSES.get(),
                         ModItems.DRAKE_PENDANT.get(),
                         ModItems.STINTIK_HELMET.get(),
-                        ModItems.BOXERS.get(),
-                        ModItems.DND.get());
+                        ModItems.DND_CHESTPLATE.get());
+
+        this.tag(ModTags.Items.STEAMER_REPAIRABLE)
+                .add(ModItems.TWITCH_DIAMOND.get());
+        this.tag(ModTags.Items.SCHOOL_REPAIRABLE)
+                .add(ModItems.SCHOOL_BOOT.get());
+        this.tag(ModTags.Items.DND_REPAIRABLE)
+                .add(ModItems.DICE.get());
     }
 }

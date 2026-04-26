@@ -104,13 +104,13 @@ public class CommonEvents {
                         wait = false;
                         return;
                     }
-                    player.sendSystemMessage(Component.translatable("dastreamers.message.tnt1", timer), true);
+                    player.sendSystemMessage(Component.translatable("eqlans.message.tnt1", timer), true);
                     timer--;
                     return;
                 }
                 spawnTnt(player, player.level());
                 spawnedTNT++;
-                player.sendSystemMessage(Component.translatable("dastreamers.message.tnt", 25 - spawnedTNT), true);
+                player.sendSystemMessage(Component.translatable("eqlans.message.tnt", 25 - spawnedTNT), true);
             }
             if (spawnedTNT == 25) {
                 player.getPersistentData().putBoolean("used", false);
@@ -118,17 +118,5 @@ public class CommonEvents {
             }
         }
 
-    }
-
-    @SubscribeEvent
-    public static void onLivingHurtEvent(LivingIncomingDamageEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
-            if (player.getPersistentData().getBoolean("abilityUsed_3").get()) {
-                if (player.isFallFlying()) {
-                    event.setCanceled(true);
-                    player.getPersistentData().putBoolean("abilityUsed_3", false);
-                }
-            }
-        }
     }
 }

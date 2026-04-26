@@ -46,7 +46,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         @Override
         public String getName() {
-            return "Eqlans Recipe";
+            return "My Recipes";
         }
     }
 
@@ -62,20 +62,17 @@ public class ModRecipeProvider extends RecipeProvider {
         oreCooking(RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, DUMPLING_SMELTABLES,
                 RecipeCategory.MISC, ModItems.OVERCOOKED_DUMPLING.get(), 0f, 200,
                 "dumpling", "twitch");
-        oreCooking(RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new, DUMPLING_SMELTABLES,
-                RecipeCategory.MISC, ModItems.OVERCOOKED_DUMPLING.get(), 0f, 600,
-                "dumpling", "twitch");
         // Twitch Block
         shaped(RecipeCategory.MISC, ModBlocks.TWITCH_BLOCK.get())
                 .pattern("TTT")
                 .pattern("TTT")
                 .pattern("TTT")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Twitch Diamond
         shapeless(RecipeCategory.MISC, ModItems.TWITCH_DIAMOND.get(), 9)
                 .requires(ModBlocks.TWITCH_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.TWITCH_BLOCK.get()), has(ModBlocks.TWITCH_BLOCK.get()));
+                .unlockedBy(getHasName(ModBlocks.TWITCH_BLOCK.get()), has(ModBlocks.TWITCH_BLOCK.get())).save(output);
         // Dumpling
         shaped(RecipeCategory.MISC, ModItems.DUMPLING.get())
                 .pattern(" W ")
@@ -83,7 +80,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" W ")
                 .define('W', Items.WHEAT)
                 .define('D', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // School Boot
         shaped(RecipeCategory.MISC, ModItems.SCHOOL_BOOT.get())
                 .pattern("KK ")
@@ -92,7 +89,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('K', Items.DRIED_KELP)
                 .define('B', Items.BLACK_DYE)
                 .define('C', Items.COAL)
-                .unlockedBy(getHasName(Items.COAL), has(Items.COAL));
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL)).save(output);
         // Stint-o-Coin
         shaped(RecipeCategory.MISC, ModItems.STINTOCOIN.get())
                 .pattern(" G ")
@@ -100,7 +97,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" G ")
                 .define('G', Items.GOLD_NUGGET)
                 .define('D', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Ball of Drake
         shaped(RecipeCategory.MISC, ModItems.BALL_OF_DRAKE.get())
                 .pattern(" I ")
@@ -108,7 +105,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" I ")
                 .define('I', Items.IRON_NUGGET)
                 .define('D', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Drake Pendant
         shaped(RecipeCategory.MISC, ModItems.DRAKE_PENDANT.get())
                 .pattern("I I")
@@ -116,27 +113,27 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" B ")
                 .define('I', Items.IRON_INGOT)
                 .define('B', ModItems.BALL_OF_DRAKE.get())
-                .unlockedBy(getHasName(ModItems.BALL_OF_DRAKE.get()), has(ModItems.BALL_OF_DRAKE.get()));
+                .unlockedBy(getHasName(ModItems.BALL_OF_DRAKE.get()), has(ModItems.BALL_OF_DRAKE.get())).save(output);
         // Glasses
         shaped(RecipeCategory.MISC, ModItems.GLASSES.get())
                 .pattern("C C")
                 .pattern("GCG")
                 .define('C', Items.COAL)
                 .define('G', Items.GLASS)
-                .unlockedBy(getHasName(Items.COAL), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(Items.COAL), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Dumpling Sun
         shaped(RecipeCategory.MISC, ModItems.DUMPLING_SUN.get())
                 .pattern("GD")
                 .define('D', ModItems.DUMPLING.get())
                 .define('G', ModItems.GLASSES.get())
-                .unlockedBy(getHasName(ModItems.DUMPLING.get()), has(ModItems.DUMPLING.get()));
+                .unlockedBy(getHasName(ModItems.DUMPLING.get()), has(ModItems.DUMPLING.get())).save(output);
         // Stint helmet
         shaped(RecipeCategory.MISC, ModItems.STINTIK_HELMET.get())
                 .pattern("CSC")
                 .pattern("C C")
                 .define('C', ModItems.COIN_ALLOY.get())
                 .define('S', ModItems.STINTOCOIN.get())
-                .unlockedBy(getHasName(ModItems.STINTOCOIN.get()), has(ModItems.STINTOCOIN.get()));
+                .unlockedBy(getHasName(ModItems.STINTOCOIN.get()), has(ModItems.STINTOCOIN.get())).save(output);
         // Mzlff Microphone
         shaped(RecipeCategory.MISC, ModItems.MAZELLOVVV_MICROPHONE.get())
                 .pattern(" DB")
@@ -145,7 +142,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('D', ModItems.TWITCH_DIAMOND.get())
                 .define('B', ModBlocks.TWITCH_BLOCK.get())
                 .define('C', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Om Nom
         shaped(RecipeCategory.MISC, ModItems.OM_NOM.get())
                 .pattern("WSI")
@@ -158,7 +155,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('D', Items.DIAMOND_PICKAXE)
                 .define('B', ModBlocks.TWITCH_BLOCK.get())
                 .define('A', ModItems.BALL_OF_DRAKE.get())
-                .unlockedBy(getHasName(ModItems.BALL_OF_DRAKE.get()), has(ModItems.BALL_OF_DRAKE.get()));
+                .unlockedBy(getHasName(ModItems.BALL_OF_DRAKE.get()), has(ModItems.BALL_OF_DRAKE.get())).save(output);
         // Super Om Nom
         shaped(RecipeCategory.MISC, ModItems.SUPER_OM_NOM.get())
                 .pattern("RRR")
@@ -168,7 +165,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('I', Items.IRON_INGOT)
                 .define('B', Blocks.IRON_BLOCK)
                 .define('O', ModItems.OM_NOM.get())
-                .unlockedBy(getHasName(ModItems.OM_NOM.get()), has(ModItems.OM_NOM.get()));
+                .unlockedBy(getHasName(ModItems.OM_NOM.get()), has(ModItems.OM_NOM.get())).save(output);
         // Holy Mantle
         shaped(RecipeCategory.MISC, ModItems.HOLY_MANTLE.get())
                 .pattern("WTW")
@@ -178,7 +175,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('T', ModBlocks.TWITCH_BLOCK.get())
                 .define('N', Items.NETHER_STAR)
                 .define('C', ModItems.MAZELLOVVV_COOKIE)
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Twitch Sword
         shaped(RecipeCategory.MISC, ModItems.TWITCH_SWORD.get())
                 .pattern("T")
@@ -186,7 +183,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("S")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Twitch Axe
         shaped(RecipeCategory.MISC, ModItems.TWITCH_AXE.get())
                 .pattern("TT")
@@ -194,7 +191,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" S")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Twitch Pickaxe
         shaped(RecipeCategory.MISC, ModItems.TWITCH_PICKAXE.get())
                 .pattern("TTT")
@@ -202,7 +199,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" S ")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Twitch Shovel
         shaped(RecipeCategory.MISC, ModItems.TWITCH_SHOVEL.get())
                 .pattern("T")
@@ -210,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("S")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Twitch Hoe
         shaped(RecipeCategory.MISC, ModItems.TWITCH_HOE.get())
                 .pattern("TT")
@@ -218,7 +215,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" S")
                 .define('T', ModItems.TWITCH_DIAMOND.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Ginger Bread
         shaped(RecipeCategory.MISC, ModItems.MAZELLOVVV_COOKIE.get())
                 .pattern("WSW")
@@ -227,78 +224,78 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('W', Items.WHEAT)
                 .define('S', Items.SUGAR)
                 .define('D', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // Ginger Block
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_BLOCK.get())
                 .pattern("GG")
                 .pattern("GG")
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Ginger Stairs
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_STAIRS.get(), 6)
                 .pattern("G  ")
                 .pattern("GG ")
                 .pattern("GGG")
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Ginger Door
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_DOOR.get(), 3)
                 .pattern("GG")
                 .pattern("GG")
                 .pattern("GG")
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Ginger Fence
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_FENCE.get(), 3)
                 .pattern("GSG")
                 .pattern("GSG")
                 .define('S', Items.STICK)
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Ginger Fence Gate
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_FENCE_GATE.get())
                 .pattern("SGS")
                 .pattern("SGS")
                 .define('S', Items.STICK)
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Ginger Slab
         shaped(RecipeCategory.MISC, ModBlocks.GINGER_SLAB.get(), 3)
                 .pattern("GGG")
                 .define('G', ModItems.MAZELLOVVV_COOKIE.get())
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Sugar Block
         shaped(RecipeCategory.MISC, ModBlocks.SUGAR_BLOCK.get())
                 .pattern("SS")
                 .pattern("SS")
                 .define('S', Items.SUGAR)
-                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR));
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR)).save(output);
         // Sugar Stair
         shaped(RecipeCategory.MISC, ModBlocks.SUGAR_STAIRS.get(), 6)
                 .pattern("S  ")
                 .pattern("SS ")
                 .pattern("SSS")
                 .define('S', Items.SUGAR)
-                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR));
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR)).save(output);
         // Sugar Block
         shaped(RecipeCategory.MISC, ModBlocks.SUGAR_SLAB.get(), 12)
                 .pattern("SSS")
                 .define('S', Items.SUGAR)
-                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR));
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR)).save(output);
         // Sugar Fence Gate
         shaped(RecipeCategory.MISC, ModBlocks.SUGAR_FENCE_GATE.get())
                 .pattern("SGS")
                 .pattern("SGS")
                 .define('S', Items.STICK)
                 .define('G', Items.SUGAR)
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Sugar Fence
         shaped(RecipeCategory.MISC, ModBlocks.SUGAR_FENCE.get(), 3)
                 .pattern("GSG")
                 .pattern("GSG")
                 .define('S', Items.STICK)
                 .define('G', Items.SUGAR)
-                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get()));
+                .unlockedBy(getHasName(ModItems.MAZELLOVVV_COOKIE.get()), has(ModItems.MAZELLOVVV_COOKIE.get())).save(output);
         // Closed DND book
         shaped(RecipeCategory.MISC, ModItems.CLOSED_DND_BOOK.get())
                 .pattern("UPL")
@@ -309,7 +306,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('D', ModItems.TWITCH_DIAMOND.get())
                 .define('C', ModItems.DICE.get())
                 .define('U', ModItems.DUMPLING_SUN.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
         // DND book
         shaped(RecipeCategory.MISC, ModItems.DND_BOOK.get())
                 .pattern("DWD")
@@ -318,7 +315,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('D', ModItems.DICE.get())
                 .define('W', Items.WITHER_SKELETON_SKULL)
                 .define('C', ModItems.CLOSED_DND_BOOK.get())
-                .unlockedBy(getHasName(ModItems.CLOSED_DND_BOOK.get()), has(ModItems.CLOSED_DND_BOOK.get()));
+                .unlockedBy(getHasName(ModItems.CLOSED_DND_BOOK.get()), has(ModItems.CLOSED_DND_BOOK.get())).save(output);
         // Dice
         shaped(RecipeCategory.MISC, ModItems.DICE.get())
                 .pattern("WBW")
@@ -327,6 +324,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', Items.BLACK_DYE)
                 .define('W', Items.WHITE_DYE)
                 .define('D', ModItems.TWITCH_DIAMOND.get())
-                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get()));
+                .unlockedBy(getHasName(ModItems.TWITCH_DIAMOND.get()), has(ModItems.TWITCH_DIAMOND.get())).save(output);
+        // DND Chestplate
+        shaped(RecipeCategory.MISC, ModItems.DND_CHESTPLATE.get())
+                .pattern("D D")
+                .pattern("DDD")
+                .pattern("PDP")
+                .define('D', ModItems.DICE.get())
+                .define('P', ModItems.DUMPLING_SUN.get())
+                .unlockedBy(getHasName(ModItems.DUMPLING_SUN.get()), has(ModItems.DUMPLING_SUN.get())).save(output);
     }
 }

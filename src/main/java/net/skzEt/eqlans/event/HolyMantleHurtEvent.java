@@ -11,6 +11,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
@@ -27,14 +28,8 @@ import java.util.UUID;
 @EventBusSubscriber(modid = Streamer.MOD_ID)
 public class HolyMantleHurtEvent {
 
-    public static UUID playerUUID;
-
-    @SubscribeEvent
-    public static void onEntityJoinLevel(EntityJoinLevelEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
-            playerUUID = player.getUUID();
-        }
-    }
+    static int effectTime = 30 * 20;
+    static int tickCount = 60 * 20;
 
     @SubscribeEvent
     public static void holyMantle(LivingIncomingDamageEvent event) {
@@ -42,25 +37,23 @@ public class HolyMantleHurtEvent {
             ServerLevel level = player.level();
 
             if (!level.isClientSide()) {
-                int effectTime = 30 * 20;
-                int tickCount = 60 * 20;
                 if (player.getOffhandItem().getItem() == ModItems.HOLY_MANTLE.get() || player.getMainHandItem().getItem() == ModItems.HOLY_MANTLE.get()) {
                     if (player.isInLava() && !isCooldown()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         event.setCanceled(true);
                         player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectTime));
                         playSoundParticleAnimation();
                     } else if (player.fallDistance >= 4f && !isCooldown()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         event.setCanceled(true);
                         playSoundParticleAnimation();
                     } else if (player.getItemBySlot(EquipmentSlot.CHEST).getItem() == Items.ELYTRA && player.isFallFlying() && !isCooldown()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         event.setCanceled(true);
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectTime, 2));
                         playSoundParticleAnimation();
                     } else if (player.isInWall() && !isCooldown()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         level.explode(player, player.getX(),  player.getY(),
                                 player.getZ(), new Random().nextInt(3, 5), Level.ExplosionInteraction.BLOCK);
                         event.setCanceled(true);
@@ -68,7 +61,7 @@ public class HolyMantleHurtEvent {
                         player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, effectTime));
                         playSoundParticleAnimation();
                     } else if (player.isAttackable() && !isCooldown() && !player.isInWater()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         event.setCanceled(true);
                         player.removeAllEffects();
                         player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, effectTime, 50));
@@ -76,7 +69,7 @@ public class HolyMantleHurtEvent {
                         player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, effectTime, 2));
                         playSoundParticleAnimation();
                     } else if (player.isInWater() && !isCooldown()) {
-                        Cooldown(tickCount);
+                        Cooldown(tickCount, player);
                         event.setCanceled(true);
                         player.removeAllEffects();
                         player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, effectTime));
@@ -89,30 +82,28 @@ public class HolyMantleHurtEvent {
         }
     }
 
-    private static void Cooldown(int pTick) {
-        MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-        ServerPlayer player = server.getPlayerList().getPlayer(playerUUID);
+    private static void Cooldown(int pTick, ServerPlayer player) {
         player.getCooldowns().addCooldown(ModItems.HOLY_MANTLE.toStack(), pTick);
     }
     private static boolean isCooldown() {
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-        ServerPlayer player = server.getPlayerList().getPlayer(playerUUID);
+        ServerPlayer player = server.getPlayerList().getPlayer(CommonEvents.playerUUID);
         return player.getCooldowns().isOnCooldown(ModItems.HOLY_MANTLE.toStack());
     }
     private static void spawnParticle(ServerLevel level, ServerPlayer pos) {
         level.sendParticles(ModParticles.HOLY_MANTLE_PARTICLE.get(),
                 pos.getX(), pos.getY(), pos.getZ(), 300,
-                0, 0,0, 1.4);
+                1.5f, 1,1.5f, 1.4);
     }
     private static void playSoundParticleAnimation() {
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-        ServerPlayer player = server.getPlayerList().getPlayer(playerUUID);
+        ServerPlayer player = server.getPlayerList().getPlayer(CommonEvents.playerUUID);
         ServerLevel level = player.level();
 
         player.level().playSound(null,
                 player.getX(), player.getY(), player.getZ(),
                 ModSounds.HOLY_MANTLE.get(), SoundSource.PLAYERS, 1f, 1f);
         spawnParticle(level, player);
-        Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(ModItems.HOLY_MANTLE.get()));
+        Minecraft.getInstance().gameRenderer.displayItemActivation(ModItems.HOLY_MANTLE.toStack());
     }
 }

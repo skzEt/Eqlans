@@ -5,15 +5,17 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.StairBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.skzEt.eqlans.Streamer;
+import net.skzEt.eqlans.registries.ModArmorMaterial;
 import net.skzEt.eqlans.registries.ModBlocks;
 import net.skzEt.eqlans.registries.ModItems;
 
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class ModModelProvider extends ModelProvider {
 
@@ -22,6 +24,7 @@ public class ModModelProvider extends ModelProvider {
             ModItems.DUMPLING_SUN,
             ModItems.BALL_OF_DRAKE,
             ModItems.MAZELLOVVV_COOKIE,
+            ModItems.STINTOCOIN,
 
             ModItems.TWITCH_DIAMOND,
             ModItems.SCHOOL_BOOT,
@@ -53,32 +56,40 @@ public class ModModelProvider extends ModelProvider {
             itemModels.generateFlatItem(item.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         }
 
-        itemModels.generateTrimmableItem(ModItems.GLASSES.get(), ModItems.TWITCH_ASSET,
+        itemModels.generateTrimmableItem(ModItems.GLASSES.get(), ModArmorMaterial.SCHOOL,
                 ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.STINTIK_HELMET.get(), ModItems.TWITCH_ASSET,
+
+        itemModels.generateTrimmableItem(ModItems.STINTIK_HELMET.get(), ModArmorMaterial.STREAMER,
                 ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.BOXERS.get(), ModItems.TWITCH_ASSET,
-                ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.DND.get(), ModItems.TWITCH_ASSET,
+
+        itemModels.generateTrimmableItem(ModItems.DND_CHESTPLATE.get(), ModArmorMaterial.DND,
                 ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.DRAKE_PENDANT.get(), ModItems.TWITCH_ASSET,
+
+        itemModels.generateTrimmableItem(ModItems.DRAKE_PENDANT.get(), ModArmorMaterial.STREAMER,
                 ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
 
         blockModels.createTrivialCube(ModBlocks.TWITCH_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.TWITCH_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_TWITCH_ORE.get());
-        blockModels.createGenericCube(ModBlocks.GINGER_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.SUGAR_BLOCK.get());
 
-        blockModels.createTrivialCube(ModBlocks.GINGER_STAIRS.get());
-        blockModels.createTrivialCube(ModBlocks.SUGAR_STAIRS.get());
-        blockModels.createTrivialCube(ModBlocks.SUGAR_SLAB.get());
-        blockModels.createTrivialCube(ModBlocks.GINGER_SLAB.get());
-        blockModels.createTrivialCube(ModBlocks.GINGER_FENCE_GATE.get());
-        blockModels.createTrivialCube(ModBlocks.SUGAR_FENCE_GATE.get());
-        blockModels.createTrivialCube(ModBlocks.GINGER_FENCE.get());
-        blockModels.createTrivialCube(ModBlocks.SUGAR_FENCE.get());
+        blockModels.family(ModBlocks.GINGER_BLOCK.get())
+                .stairs(ModBlocks.GINGER_STAIRS.get())
+                .slab(ModBlocks.GINGER_SLAB.get())
+                .fence(ModBlocks.GINGER_FENCE.get())
+                .fenceGate(ModBlocks.GINGER_FENCE_GATE.get())
+                .door(ModBlocks.GINGER_DOOR.get());
 
-        blockModels.createDoor(ModBlocks.GINGER_DOOR.get());
+        blockModels.family(ModBlocks.SUGAR_BLOCK.get())
+                .stairs(ModBlocks.SUGAR_STAIRS.get())
+                .slab(ModBlocks.SUGAR_SLAB.get())
+                .fence(ModBlocks.SUGAR_FENCE.get())
+                .fenceGate(ModBlocks.SUGAR_FENCE_GATE.get());
+    }
+
+    @Override
+    protected Stream<? extends Holder<Item>> getKnownItems() {
+        return ModItems.ITEMS.getEntries().stream().filter(x -> !x.is(ModItems.OM_NOM) && !x.is(ModItems.SUPER_OM_NOM)
+                && !x.is(ModItems.HOLY_MANTLE) && !x.is(ModItems.CLOSED_DND_BOOK) && !x.is(ModItems.DND_BOOK)
+                && !x.is(ModItems.MAZELLOVVV_MICROPHONE));
     }
 }

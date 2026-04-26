@@ -22,11 +22,6 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        add("boxers_from_ruined_portal",
-                new AddItemModifier(new LootItemCondition[] {
-                        new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("chests/ruined_portal")).build(),
-                        LootItemRandomChanceCondition.randomChance(0.4f).build()}, ModItems.BOXERS.get()));
-
         add("stintocoin_from_desert_pyramid", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("chests/desert_pyramid")).build(),
                 LootItemRandomChanceCondition.randomChance(0.3f).build()}, ModItems.STINTOCOIN.get()));

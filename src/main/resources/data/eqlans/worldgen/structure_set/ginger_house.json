@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "eqlans:ginger_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 41840952,
+    "spacing": 32,
+    "separation": 8
+  }
+}
