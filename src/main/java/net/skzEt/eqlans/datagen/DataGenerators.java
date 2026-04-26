@@ -3,6 +3,7 @@ package net.skzEt.eqlans.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.api.distmarker.Dist;
@@ -36,6 +37,14 @@ public class DataGenerators {
 
         generator.addProvider(true, new ModDatapackEntries(packOutput, lookupProvider));
         generator.addProvider(true, new ModGlobalLootModifiersProvider(packOutput, lookupProvider));
+
+        event.createProvider((output, lookup) -> new AdvancementProvider(
+                output, lookupProvider,
+                List.of(
+                        new ModAdvancementProvider(),
+                        ModAdvancementRegister::generateExampleAdvancements
+                )
+        ));
     }
 
     @SubscribeEvent
@@ -56,5 +65,13 @@ public class DataGenerators {
 
         generator.addProvider(true, new ModDatapackEntries(packOutput, lookupProvider));
         generator.addProvider(true, new ModGlobalLootModifiersProvider(packOutput, lookupProvider));
+
+        event.createProvider((output, lookup) -> new AdvancementProvider(
+                output, lookupProvider,
+                List.of(
+                        new ModAdvancementProvider(),
+                        ModAdvancementRegister::generateExampleAdvancements
+                )
+        ));
     }
 }

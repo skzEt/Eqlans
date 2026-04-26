@@ -36,6 +36,8 @@ public class Streamer
         ModStructures.STRUCTURES.register(modEventBus);
         ModStructurePlacement.STRUCTURE_PLACEMENT_TYPE.register(modEventBus);
 
+        ModTriggerType.TRIGGER_TYPES.register(modEventBus);
+
         ModParticles.PARTICLE_TYPE.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
 

@@ -1,0 +1,32 @@
+{
+  "parent": "eqlans:stone_axe",
+  "criteria": {
+    "stone_axe_kill": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:stone_axe"
+        }
+      },
+      "trigger": "eqlans:stone_axe_trigger"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "eqlans.advancement.stone_axe_desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:stone_axe"
+    },
+    "title": {
+      "translate": "eqlans.advancement.stone_axe"
+    }
+  },
+  "requirements": [
+    [
+      "stone_axe_kill"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

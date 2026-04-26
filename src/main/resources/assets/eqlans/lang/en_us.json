@@ -76,6 +76,13 @@
   "eqlans.stone_axe_5_v": "<%s> APAJOPI",
   "eqlans.stone_axe_6_v": "<%s> APOJOPI",
 
+  "eqlans.advancement.eqlans": "Wow, shiny",
+  "eqlans.advancement.eqlan_desc": "Get your first Twitch Diamond",
+  "eqlans.advancement.stone_axe": "The strongest of all",
+  "eqlans.advancement.stone_axe_desc": "Kill the ender dragon by dealing over 75% damage with a stone axe",
+  "eqlans.advancement.stone_axe_craft": "I see the future",
+  "eqlans.advancement.stone_axe_craft_desc": "Craft a stone axe",
+
   "eqlans.message.failed_cube": "Critical unluck",
   "eqlans.message.cube": "A number appeared on the dice: %s",
   "eqlans.message.max_cube": "Max number!",

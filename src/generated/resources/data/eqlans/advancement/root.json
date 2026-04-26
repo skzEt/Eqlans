@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "has_twitch_diamond": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:twitch_diamond"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "eqlans:gui/advancements/backgrounds/eqlans",
+    "description": {
+      "translate": "eqlans.advancement.eqlan_desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "eqlans:twitch_diamond"
+    },
+    "title": {
+      "translate": "eqlans.advancement.eqlans"
+    }
+  },
+  "requirements": [
+    [
+      "has_twitch_diamond"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

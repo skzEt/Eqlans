@@ -1,0 +1,33 @@
+{
+  "parent": "eqlans:root",
+  "criteria": {
+    "has_stone_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stone_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "eqlans.advancement.stone_axe_craft_desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cobblestone"
+    },
+    "title": {
+      "translate": "eqlans.advancement.stone_axe_craft"
+    }
+  },
+  "requirements": [
+    [
+      "has_stone_axe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

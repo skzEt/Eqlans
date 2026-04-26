@@ -76,6 +76,13 @@
   "eqlans.stone_axe_5_v": "<%s> АПАЖОПИ",
   "eqlans.stone_axe_6_v": "<%s> АПОЖОПИ",
 
+  "eqlans.advancement.eqlans": "Ого, блестяшка",
+  "eqlans.advancement.eqlan_desc": "Получите свой первый твич алмаз",
+  "eqlans.advancement.stone_axe": "Сильнейший из всех",
+  "eqlans.advancement.stone_axe_desc": "Убить дракона края нанеся более 75% урона с помощью каменного топора",
+  "eqlans.advancement.stone_axe_craft": "Я вижу будущее",
+  "eqlans.advancement.stone_axe_craft_desc": "Скрафтить каменный топор",
+
   "eqlans.message.failed_cube": "Критическая неудача",
   "eqlans.message.cube": "На кубике выпало число: %s",
   "eqlans.message.max_cube": "Максимальное число!",
