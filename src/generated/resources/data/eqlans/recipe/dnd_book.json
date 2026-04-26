@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "eqlans:closed_dnd_book",
+    "D": "eqlans:dice",
+    "W": "minecraft:wither_skeleton_skull"
+  },
+  "pattern": [
+    "DWD",
+    "WCW",
+    "DWD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:dnd_book"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stintocoin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:stintocoin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:coin_alloy_from_blasting_stintocoin"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stintocoin"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:coin_alloy_from_blasting_stintocoin"
+    ]
+  }
+}

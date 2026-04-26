@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dumpling_sun": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:dumpling_sun"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:dnd_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dumpling_sun"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:dnd_chestplate"
+    ]
+  }
+}

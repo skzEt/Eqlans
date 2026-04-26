@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "eqlans:ball_of_drake",
+    "B": "eqlans:twitch_block",
+    "D": "minecraft:diamond_pickaxe",
+    "G": "minecraft:golden_pickaxe",
+    "I": "minecraft:iron_pickaxe",
+    "S": "minecraft:stone_pickaxe",
+    "W": "minecraft:wooden_pickaxe"
+  },
+  "pattern": [
+    "WSI",
+    "GBD",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:default_om_nom"
+  }
+}

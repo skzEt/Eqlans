@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "eqlans:block/deepslate_twitch_ore"
+    }
+  }
+}

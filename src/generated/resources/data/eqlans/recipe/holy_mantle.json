@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "eqlans:mazellovvv_cookie",
+    "N": "minecraft:nether_star",
+    "T": "eqlans:twitch_block",
+    "W": "minecraft:wither_skeleton_skull"
+  },
+  "pattern": [
+    "WTW",
+    "TNT",
+    "CTC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:holy_mantle"
+  }
+}

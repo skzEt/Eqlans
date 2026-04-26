@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:sugar",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "SGS",
+    "SGS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:sugar_fence_gate"
+  }
+}

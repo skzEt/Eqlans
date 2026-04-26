@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mazellovvv_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:mazellovvv_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:ginger_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mazellovvv_cookie"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:ginger_block"
+    ]
+  }
+}

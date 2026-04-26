@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dumpling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:dumpling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:overcooked_dumplingtwitch_dumpling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dumpling"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:overcooked_dumplingtwitch_dumpling"
+    ]
+  }
+}

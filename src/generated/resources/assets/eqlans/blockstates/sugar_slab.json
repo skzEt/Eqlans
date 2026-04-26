@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "eqlans:block/sugar_slab"
+    },
+    "type=double": {
+      "model": "eqlans:block/sugar_block"
+    },
+    "type=top": {
+      "model": "eqlans:block/sugar_slab_top"
+    }
+  }
+}

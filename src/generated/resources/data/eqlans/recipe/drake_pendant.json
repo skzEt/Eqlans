@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "eqlans:ball_of_drake",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "I I",
+    "I I",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:drake_pendant"
+  }
+}

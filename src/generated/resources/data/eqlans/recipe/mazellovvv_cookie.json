@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "eqlans:twitch_diamond",
+    "S": "minecraft:sugar",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "WSW",
+    " D ",
+    "W W"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:mazellovvv_cookie"
+  }
+}

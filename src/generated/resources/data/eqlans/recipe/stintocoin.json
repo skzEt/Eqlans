@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "eqlans:twitch_diamond",
+    "G": "minecraft:gold_nugget"
+  },
+  "pattern": [
+    " G ",
+    "GDG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:stintocoin"
+  }
+}

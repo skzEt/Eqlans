@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "eqlans:block/sugar_block",
+    "side": "eqlans:block/sugar_block",
+    "top": "eqlans:block/sugar_block"
+  }
+}

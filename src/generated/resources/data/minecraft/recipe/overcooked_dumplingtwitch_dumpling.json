@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "group": "dumpling",
+  "ingredient": "eqlans:dumpling",
+  "result": {
+    "count": 1,
+    "id": "eqlans:overcooked_dumpling"
+  }
+}

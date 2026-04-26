@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "eqlans:twitch_block",
+    "C": "eqlans:mazellovvv_cookie",
+    "D": "eqlans:twitch_diamond"
+  },
+  "pattern": [
+    " DB",
+    " CD",
+    "C  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:mazellovvv_microphone"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:twitch_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twitch_diamond": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:twitch_diamond"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_twitch_diamond"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:twitch_block"
+    ]
+  }
+}

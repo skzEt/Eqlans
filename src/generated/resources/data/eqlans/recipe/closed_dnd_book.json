@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "eqlans:dice",
+    "D": "eqlans:twitch_diamond",
+    "L": "minecraft:leather",
+    "P": "minecraft:paper",
+    "U": "eqlans:dumpling_sun"
+  },
+  "pattern": [
+    "UPL",
+    "PDC",
+    "LCU"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:closed_dnd_book"
+  }
+}

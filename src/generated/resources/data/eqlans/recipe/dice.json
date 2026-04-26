@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:black_dye",
+    "D": "eqlans:twitch_diamond",
+    "W": "minecraft:white_dye"
+  },
+  "pattern": [
+    "WBW",
+    "BDB",
+    "WBW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:dice"
+  }
+}

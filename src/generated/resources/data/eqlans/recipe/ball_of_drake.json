@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "eqlans:twitch_diamond",
+    "I": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    " I ",
+    "IDI",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:ball_of_drake"
+  }
+}

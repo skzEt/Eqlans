@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ball_of_drake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:ball_of_drake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:drake_pendant"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ball_of_drake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:drake_pendant"
+    ]
+  }
+}

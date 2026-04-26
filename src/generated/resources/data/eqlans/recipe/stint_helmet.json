@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "eqlans:coin_alloy",
+    "S": "eqlans:stintocoin"
+  },
+  "pattern": [
+    "CSC",
+    "C C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:stint_helmet"
+  }
+}

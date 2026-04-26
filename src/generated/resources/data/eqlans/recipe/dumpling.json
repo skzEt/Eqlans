@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "eqlans:twitch_diamond",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    " W ",
+    "WDW",
+    " W "
+  ],
+  "result": {
+    "count": 1,
+    "id": "eqlans:dumpling"
+  }
+}

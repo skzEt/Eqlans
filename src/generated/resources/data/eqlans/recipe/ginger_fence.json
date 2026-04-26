@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "eqlans:mazellovvv_cookie",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "GSG",
+    "GSG"
+  ],
+  "result": {
+    "count": 3,
+    "id": "eqlans:ginger_fence"
+  }
+}

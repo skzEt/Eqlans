@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_default_om_nom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:default_om_nom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:default_super_om_nom"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_default_om_nom"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:default_super_om_nom"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "eqlans:block/ginger_slab"
+    },
+    "type=double": {
+      "model": "eqlans:block/ginger_block"
+    },
+    "type=top": {
+      "model": "eqlans:block/ginger_slab_top"
+    }
+  }
+}

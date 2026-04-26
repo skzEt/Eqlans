@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_closed_dnd_book": {
+      "conditions": {
+        "items": [
+          {
+            "items": "eqlans:closed_dnd_book"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "eqlans:dnd_book"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_closed_dnd_book"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "eqlans:dnd_book"
+    ]
+  }
+}
