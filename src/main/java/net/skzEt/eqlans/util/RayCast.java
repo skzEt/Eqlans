@@ -12,7 +12,7 @@ import java.util.List;
 public class RayCast {
     public static BlockPos rayBlock(Player player, Level level, int maxDistance) {
         Vec3 eyePos = player.getEyePosition(1);
-        Vec3 viewPos = player.getViewVector(1);
+        Vec3 viewPos = player.getLookAngle();
         Vec3 endPos = eyePos.add(viewPos.x * maxDistance, viewPos.y * maxDistance,
                 viewPos.z * maxDistance);
 
@@ -30,7 +30,7 @@ public class RayCast {
 
     public static Entity rayEntity(Player player, Level level, int maxDistance) {
         Vec3 eyePos = player.getEyePosition(1);
-        Vec3 viewPos = player.getViewVector(1);
+        Vec3 viewPos = player.getLookAngle();
         Vec3 endPos = eyePos.add(viewPos.x * maxDistance, viewPos.y * maxDistance,
                 viewPos.z * maxDistance);
 
@@ -47,7 +47,7 @@ public class RayCast {
             if (intersection != null) {
                 double distance = eyePos.distanceToSqr(intersection);
                 if (distance < closestDistance) {
-
+                    closestDistance = distance;
                     EntityHitResult result = new EntityHitResult(entity, intersection);
 
                     if (result.getType() == HitResult.Type.ENTITY) {
