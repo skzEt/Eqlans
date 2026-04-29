@@ -3,10 +3,13 @@ package net.skzEt.eqlans.item;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Vec3i;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -21,6 +24,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.skzEt.eqlans.client.ModKeyboardHelper;
 import net.skzEt.eqlans.event.CommonEvents;
@@ -39,6 +43,7 @@ public class DNDBook extends Item {
     private int MAX_ABILITIES = 3;
 
     private int CUBE;
+    private static final Random RANDOM = new Random();
 
     private List<String> DESCRIPTION = List.of(
             "eqlans.message.ability_1",
@@ -160,32 +165,36 @@ public class DNDBook extends Item {
     private void ExplodeRaycast(int i, ServerPlayer player, Player pPlayer, Level pLevel, InteractionHand pUsedHand) {
         CUBE = i;
         BlockPos blockPos = RayCast.rayBlock(pPlayer, pLevel, 200);
+        if (blockPos == null) return;
+
         pPlayer.getCooldowns().addCooldown(pPlayer.getItemInHand(pUsedHand), 5*20);
+        int power = 0;
         if (CUBE > 2 && CUBE < 6) {
-            // Small explode
             player.sendSystemMessage(Component.translatable("eqlans.message.cube", CUBE), true);
-
-            pLevel.explode(pPlayer, blockPos.getX(), blockPos.getY(), blockPos.getZ(),
-                    15, Level.ExplosionInteraction.BLOCK);
+            power = 6;
         } else if (CUBE == 6) {
-            // Big explode
             player.sendSystemMessage(Component.translatable("eqlans.message.max_cube"), true);
-
-            pLevel.explode(pPlayer, blockPos.getX(), blockPos.getY(), blockPos.getZ(),
-                    35, Level.ExplosionInteraction.BLOCK);
+            power = 10;
         } else if (CUBE == 2) {
-            // No damage player explode
             player.sendSystemMessage(Component.translatable("eqlans.message.cube", CUBE), true);
-
-            pLevel.explode(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                    5, Level.ExplosionInteraction.BLOCK);
+            power = 3;
+            blockPos = pPlayer.blockPosition();
         } else if (CUBE == 1) {
-            // Player explode
             player.sendSystemMessage(Component.translatable("eqlans.message.failed_cube", CUBE), true);
-
-            pLevel.explode(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                    5, Level.ExplosionInteraction.BLOCK);
+            power = 3;
+            blockPos = pPlayer.blockPosition();
         }
+
+        spawnExplosionParticles(pLevel, blockPos, power);
+
+        pLevel.explode(
+                pPlayer,
+                blockPos.getX(),
+                blockPos.getY(),
+                blockPos.getZ(),
+                power,
+                Level.ExplosionInteraction.BLOCK
+        );
     }
 
     private BlockPos findSafeTeleportPos(Level level, BlockPos pos) {
@@ -209,6 +218,49 @@ public class DNDBook extends Item {
     }
     private static int getD4() {
         return new Random().nextInt(1, 5);
+    }
+
+    private void spawnExplosionParticles(Level level, BlockPos center, int radius) {
+        if (!(level instanceof ServerLevel server)) return;
+        int count = radius * 20;
+        for (int i = 0; i < count; i++) {
+            double offsetX = (RANDOM.nextDouble() -0.5D) * radius;
+            double offsetY = (RANDOM.nextDouble() -0.5D) * radius;
+            double offsetZ = (RANDOM.nextDouble() -0.5D) * radius;
+
+            BlockPos pos = center.offset((int)offsetX, (int)offsetY, (int)offsetZ);
+            BlockState state = level.getBlockState(pos);
+
+            if (state.isAir()) continue;
+
+            double velX = (RANDOM.nextDouble() -0.5D) * 1.5D;
+            double velY = (RANDOM.nextDouble() * 1.5D);
+            double velZ = (RANDOM.nextDouble() -0.5D) * 1.5D;
+
+            server.sendParticles(
+                    new BlockParticleOption(ParticleTypes.BLOCK, state),
+                    pos.getX() + 0.5f,
+                    pos.getY() + 0.5f,
+                    pos.getZ() + 0.5f,
+                    3,
+                    velX, velY, velZ,
+                    0.1f
+            );
+
+            if (RANDOM.nextFloat() < 0.1f) {
+                server.sendParticles(
+                        ParticleTypes.FLAME,
+                        pos.getX(), pos.getY(), pos.getZ(),
+                        1, 0,0,0,0);
+            }
+        }
+        server.sendParticles(ParticleTypes.EXPLOSION_EMITTER,
+                center.getX(), center.getY(), center.getZ(),
+                1, 0,0,0,0);
+
+        server.sendParticles(ParticleTypes.SMOKE,
+                center.getX(), center.getY(), center.getZ(),
+                30, 1,1,1,0.1d);
     }
 
     @Override
